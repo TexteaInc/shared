@@ -36,7 +36,6 @@
     "dist"
   ],
   "scripts": {
-    "postinstall": "npx npm-install-peers",
     "build": "tsc",
     "build:dev": "tsc -w",
     "doc": "typedoc --json docs/typedoc-out.json src/index.ts && node scripts/docs-build.mjs",
@@ -56,6 +55,8 @@
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-angular": "^17.0.3",
     "@discordjs/ts-docgen": "^0.4.1",
+    "@mui/material": ">=5.8.7",
+    "@types/react": ">=18.0.15",
     "@typescript-eslint/eslint-plugin": "^5.30.0",
     "@typescript-eslint/parser": "^5.30.0",
     "eslint": "^8.18.0",
