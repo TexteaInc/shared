@@ -10,24 +10,24 @@
   "types": "./dist/index.d.mts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.mts",
-      "import": "./dist/index.mjs"
+      "types": "./dist/es/index.d.mts",
+      "import": "./dist/es/index.mjs"
     },
     "./sheet": {
-      "types": "./dist/sheet/index.d.mts",
-      "import": "./dist/sheet/index.mjs"
+      "types": "./dist/es/sheet/index.d.mts",
+      "import": "./dist/es/sheet/index.mjs"
     },
     "./api": {
-      "types": "./dist/api/index.d.mts",
-      "import": "./dist/api/index.mjs"
+      "types": "./dist/es/api/index.d.mts",
+      "import": "./dist/es/api/index.mjs"
     },
     "./theme": {
-      "types": "./dist/theme/index.d.mts",
-      "import": "./dist/theme/index.mjs"
+      "types": "./dist/es/theme/index.d.mts",
+      "import": "./dist/es/theme/index.mjs"
     },
     "./python": {
-      "types": "./dist/python/index.d.mts",
-      "import": "./dist/python/index.mjs"
+      "types": "./dist/es/python/index.d.mts",
+      "import": "./dist/es/python/index.mjs"
     }
   },
   "repository": "https://github.com/TexteaInc/shared",
