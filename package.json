@@ -7,7 +7,6 @@
   "main": "./dist/umd/index.cjs",
   "module": "./dist/es/index.mjs",
   "typings": "./dist/es/",
-  "types": "./dist/index.d.mts",
   "exports": {
     ".": {
       "types": "./dist/es/index.d.mts",
