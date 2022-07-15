@@ -4,6 +4,9 @@
   "type": "module",
   "description": "Type definitions for Textea packages",
   "license": "MIT",
+  "main": "./dist/umd/index.cjs",
+  "module": "./dist/es/index.mjs",
+  "typings": "./dist/es/",
   "types": "./dist/index.d.mts",
   "exports": {
     ".": {
@@ -36,9 +39,13 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc",
-    "build:dev": "tsc -w",
-    "doc": "typedoc --json docs/typedoc-out.json src/index.ts && node scripts/docs-build.mjs",
+    "build": "env-cmd -e production run-s clean build:tsc build:rollup",
+    "build:rollup": "rollup -c -m",
+    "build:tsc": "tsc -p tsconfig.json",
+    "clean": "rimraf ./dist",
+    "start": "env-cmd -e development run-p start:tsc start:rollup",
+    "start:rollup": "rollup -c -w",
+    "start:tsc": "tsc --watch -p tsconfig.json",
     "prepare": "husky install",
     "lint:check": "eslint . --ext .js,.ts",
     "lint:fix": "eslint . --ext .js,.ts --fix",
@@ -49,21 +56,32 @@
   },
   "peerDependencies": {
     "@mui/material": ">=5.9.0",
-    "@types/react": ">=18.0.15"
+    "@types/react": ">=18.0.15",
+    "@types/web": ">=0.0.69"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-angular": "^17.0.3",
     "@discordjs/ts-docgen": "^0.4.1",
     "@mui/material": "^5.9.0",
+    "@rollup/plugin-commonjs": "^22.0.1",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-replace": "^4.0.0",
     "@types/react": "^18.0.15",
+    "@types/web": "^0.0.69",
     "@typescript-eslint/eslint-plugin": "^5.30.6",
     "@typescript-eslint/parser": "^5.30.6",
+    "env-cmd": "^10.1.0",
     "eslint": "^8.19.0",
     "eslint-config-prettier": "^8.5.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
+    "npm-run-all": "^4.1.5",
     "prettier": "^2.7.1",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.77.0",
+    "rollup-plugin-analyzer": "^4.0.0",
+    "rollup-plugin-typescript2": "^0.32.1",
     "typedoc": "^0.23.7",
     "typescript": "^4.7.4"
   },

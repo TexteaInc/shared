@@ -1,24 +1,64 @@
 {
   "compilerOptions": {
-    "incremental": true,
-    "module": "ES2022",
-    "outDir": "dist",
-    "baseUrl": "./src",
-    "strictNullChecks": true,
-    "exactOptionalPropertyTypes": true,
-    "declaration": true,
-    "skipLibCheck": true,
+    "outDir": "./dist/es/"
+    /* Redirect output structure to the directory. */,
+    "rootDir": "./src/"
+    /* Specify the root directory of input files. Use to control the output directory structure with --outDir. */,
+    // Classification follows https://www.typescriptlang.org/tsconfig
+
+    // Type Checking
+    "strict": true,
+    // exactOptionalPropertyTypes: false,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    // noPropertyAccessFromIndexSignature: false,
+    // noUncheckedIndexedAccess: false,
+    // noUnusedLocals: false,
+    // noUnusedParameters: false,
+    "useUnknownInCatchVariables": true,
+    // Modules
+    "module": "NodeNext",
     "moduleResolution": "NodeNext",
-    "target": "ES2019",
+    "resolveJsonModule": true,
+    // Exclude everything by default. Include them in each project on-demand
+    "types": [
+      "web"
+    ],
+    // Emit
+    "declaration": true,
+    "declarationMap": true,
+    "importsNotUsedAsValues": "error",
+    "noEmitOnError": true,
+    // "preserveValueImports": true,
     "sourceMap": true,
-    "typeRoots": [
-      "node_modules/@types"
-    ]
+    "stripInternal": true,
+    // skip type emit for @internal types
+
+    // JavaScript Support
+    "allowJs": true,
+    "checkJs": false,
+    // Interop Constraints
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    // Language and Environment
+    "jsx": "react-jsx",
+    "lib": [
+      "ES2020"
+    ],
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    // Projects
+    // "composite": true,
+    "incremental": false,
+    // Completeness
+    "skipLibCheck": true
+    // skip all type checks for .d.ts files
   },
   "include": [
-    "src"
-  ],
-  "exclude": [
-    "node_modules"
+    "./src/"
   ]
 }
